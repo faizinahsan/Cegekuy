@@ -39,7 +39,7 @@ class Welcome extends CI_Controller {
 		SELECT ?Penyakit ?Penanganan WHERE{
 			?Gejala ex:memilikiPenyakit ?Penyakit
 			FILTER(?Gejala IN (".$service_name."))
-			?penyakit ex:memilikiPenanganan ?Penanganan.
+			?Penyakit ex:memilikiPenanganan ?Penanganan.
 		}";
 		$rows = $sc->query($q, 'rows');
 		$err = $sc->getErrors();
