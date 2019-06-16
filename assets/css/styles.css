@@ -1,0 +1,178 @@
+.section {
+    position: relative;
+    background-image: url(&quot;assets/img/bg1.jpg&quot;);
+    background-position: bottom center;
+    background-repeat: repeat-x;
+}
+.section-inverse-color {
+    background-image: url(&quot;assets/img/Head.jpg&quot;);
+    background-color: #222222;
+    color: #5a5a5a;
+}
+.helpr-section {
+    height: 100%;
+    background: #655f58 url('https://cdn3.eyeem.com/thumb/ad5d6d963196c9e05a842160422e14ffb6371c64-1531188893086/w/850');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+}
+.helpr-text {
+    height: 450px;
+}
+
+.webHomeTitle {
+    display: block;
+}
+.home-service {
+    width: 600px;
+    margin: 40px auto 100px auto;
+    border-radius: 8px;
+    background: #fff;
+    -webkit-box-shadow: 0 4px 8px rgba(2,2,2,0.14);
+    -moz-box-shadow: 0 4px 8px rgba(2,2,2,0.14);
+    box-shadow: 0 4px 8px rgba(2,2,2,0.14);
+    position: relative;
+    height: 65px;
+}
+.helpr-title {
+    padding: 10px 0 0px;
+    font-size: 70px;
+    line-height: 80px;
+    -webkit-text-shadow: 0 4px 6px rgba(0,0,0,.20);
+    -moz-text-shadow: 0 4px 6px rgba(0,0,0,.20);
+    text-shadow: 0 4px 6px rgba(0,0,0,.20);
+    font-family: 'LatoWebBlack', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #ffffff;
+    margin: 0;
+    position: relative;
+}
+.helpr-title-2 {
+    padding: 0 0 10px;
+    font-size: 20px;
+    line-height: 80px;
+    -webkit-text-shadow: 0 4px 6px rgba(0,0,0,.20);
+    -moz-text-shadow: 0 4px 6px rgba(0,0,0,.20);
+    text-shadow: 0 4px 6px rgba(0,0,0,.20);
+    font-family: 'LatoWebBlack', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #ffffff;
+    margin: 0;
+    position: relative;
+}
+.helpr-content {
+    display: table;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+@media (max-width: 3000px){
+    .helpr-section, .cleaning-section, .pestcontrol-section, .electrical-section, .plumbing-section, .carpentry-section, .ac-section, .geyser-section, .about-section, .career-section, .confirm-section, .contact-section, .deepcleaning-section, .appliances-section, .vehiclecare-section, .subscr-section, .platinum-section, .homespa-section, .homeguard-section, .laundry-section, .painting-section {
+        margin: 0 0 0 0;
+    }
+    .helpr-text {
+        width: 100%;
+        display: block !important;
+    }
+    .helpr-content {
+        text-align: center;
+    }
+}
+.wrapper-demo {
+    width:370px;
+  float:left;
+  position:relative;
+  margin:11px 0 0 0px;
+}
+
+.wrapper-demo:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.wrapper-demo1 {
+    width:200px;
+  float:left;
+  position:relative;
+  margin:11px 0 0 15px;
+  
+  
+}
+
+.container-cb {
+    font-size: 13px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul.ks-cboxtags {
+    list-style: none;
+    padding: 20px;
+}
+ul.ks-cboxtags li{
+  display: inline;
+}
+ul.ks-cboxtags li label{
+    display: inline-block;
+    background-color: rgba(255, 255, 255, .9);
+    border: 2px solid rgba(139, 139, 139, .3);
+    color: #adadad;
+    border-radius: 25px;
+    white-space: nowrap;
+    margin: 3px 0px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: all .2s;
+}
+
+ul.ks-cboxtags li label {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+ul.ks-cboxtags li label::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 12px;
+    padding: 2px 6px 2px 2px;
+    content: "\f067";
+    transition: transform .3s ease-in-out;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:checked + label::before {
+    content: "\f00c";
+    transform: rotate(-360deg);
+    transition: transform .3s ease-in-out;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:checked + label {
+    border: 2px solid #1bdbf8;
+    background-color: #12bbd4;
+    color: #fff;
+    transition: all .2s;
+}
+
+ul.ks-cboxtags li input[type="checkbox"] {
+  display: absolute;
+}
+ul.ks-cboxtags li input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+}
+ul.ks-cboxtags li input[type="checkbox"]:focus + label {
+  border: 2px solid #e9a1ff;
+}
+/* No CSS3 support: none */
