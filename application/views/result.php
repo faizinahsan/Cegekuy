@@ -29,11 +29,30 @@
 
           <h1 class="helpr-title">Semoga Cepat Sembuh!</h1>
         </div>
-        <div style="align-content: center; padding-left: 35%; padding-top: 50px">
-          <table >
-    <thead>
+        <div style="align-content: center;  padding-top: 50px">
+    
+    <div class="container">
+    <div class="row">
+    <table class="table col-md">
+    <thead class="thead-dark">
       <tr>
         <th><span>Diagnosis Penyakit</span></th>
+      </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($penyakit as $product): ?>
+      <tr>
+        <td class="lalign">
+          <?php echo substr($product['Penyakit'],23)  ?>        
+        </td>
+      </tr>
+      <?php endforeach; ?>
+    </tbody>
+  </table>
+    <table class="table col-md">
+    
+    <thead class="thead-dark">
+      <tr>
         <th><span>Penanganan</span></th>
       </tr>
     </thead>
@@ -41,17 +60,16 @@
     <?php foreach ($hasil as $product): ?>
       <tr>
         <td class="lalign">
-          <?php echo substr($product['Penyakit'],23)  ?>        
-        </td>
-        <td>
-        <?php echo substr($product['Penanganan'],23) ?>
-        
+          <?php echo substr($product['Penanganan'],23)  ?>        
         </td>
       </tr>
       <?php endforeach; ?>
-
     </tbody>
   </table>
+    </div>
+    </div>
+
+
   </div>
     </div>
     </div>

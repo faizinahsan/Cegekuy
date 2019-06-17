@@ -29,29 +29,52 @@ class Welcome extends CI_Controller {
 		$sc = new BorderCloud\SPARQL\SparqlClient();
 		$sc->setEndpointRead($endpoint);
 		//$sc->setMethodHTTPRead("GET");
+		// $q = "
+		// PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+		// PREFIX owl: <http://www.w3.org/2002/07/owl#>
+		// PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+		// PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+		// PREFIX cgk: <http://www.semanticweb.org/sadrakh/ontologies/2019/CeGeKuy/>
+		// PREFIX ex: <http://www.example.org/>
+		// SELECT ?Penyakit ?Penanganan WHERE{
+		// 	?Gejala ex:memilikiPenyakit ?Penyakit
+		// 	FILTER(?Gejala IN (".$service_name."))
+		// 	?Penyakit ex:memilikiPenanganan ?Penanganan.
+		// }";
+		// Penanganan
 		$q = "
 		PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 		PREFIX owl: <http://www.w3.org/2002/07/owl#>
 		PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-		PREFIX cgk: <http://www.semanticweb.org/sadrakh/ontologies/2019/CeGeKuy/>
 		PREFIX ex: <http://www.example.org/>
-		SELECT ?Penyakit ?Penanganan WHERE{
+
+		SELECT ?Penanganan WHERE{
 			?Gejala ex:memilikiPenyakit ?Penyakit
 			FILTER(?Gejala IN (".$service_name."))
 			?Penyakit ex:memilikiPenanganan ?Penanganan.
-		}";
+		}
+		GROUP BY ?Penanganan";
+		// Penyakit
+		$s = "
+		PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+		PREFIX owl: <http://www.w3.org/2002/07/owl#>
+		PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+		PREFIX ex: <http://www.example.org/>
+
+		SELECT ?Penyakit WHERE{
+			?Gejala ex:memilikiPenyakit ?Penyakit
+			FILTER(?Gejala IN (".$service_name."))
+		}
+		GROUP BY ?Penyakit
+		";
 		$rows = $sc->query($q, 'rows');
+		$rowsPenyakit = $sc->query($s, 'rows');
 		$err = $sc->getErrors();
 		if ($err) {
 			print_r($err);
 			throw new Exception(print_r($err, true));
-		}
-		$header = array();		
-		foreach ($rows["result"]["variables"] as $variable) {
-			$header[]=$variable;
-			// printf("%s", $variable);
-			// echo '|';
 		}
 		// echo "\n";
 		$hasil = array();
@@ -64,13 +87,17 @@ class Welcome extends CI_Controller {
 			// }
 			// echo "\n";
 		}
+		$penyakit = array();
+		foreach ($rowsPenyakit["result"]["rows"] as $row) {
+			$penyakit[]=$row;
+		}
 		// echo $service_name;
-		// echo "<pre>";
-		// var_dump($hasil);
-		// echo "</pre>";
-		$data['header'] = $header;
 		$data['hasil'] = $hasil;
+		$data['penyakit'] = $penyakit;
 		$this->load->view('result.php',$data);
+		echo "<pre>";
+		var_dump($data);
+		echo "</pre>";
 	}
 	public function home2()
 	{
