@@ -21,12 +21,6 @@
       <div class="helpr-text" data-wow-duration="1s" data-wow-delay="0.5s"> 
         <!-- TAGLINE -->
         <div class="webHomeTitle">
-          <a href=<?php echo base_url()?>> <img src="<?php echo base_url("assets/img/Logo.png")?>"  style="width: 100px; padding: 70px 0 10px;
-    text-align: center;
-    margin-left: 500px;
-    margin-right: 500px;
-    margin-bottom: 0px;"></a>
-
           <h1 class="helpr-title">Semoga Cepat Sembuh!</h1>
         </div>
         <div style="align-content: center; padding-left: 35%; padding-top: 50px">
@@ -38,18 +32,16 @@
       </tr>
     </thead>
     <tbody>
-    <?php foreach ($hasil as $product): ?>
-      <tr>
-        <td class="lalign">
-          <?php echo substr($product['Penyakit'],23)  ?>        
-        </td>
-        <td>
-        <?php echo substr($product['Penanganan'],23) ?>
-        
-        </td>
-      </tr>
-      <?php endforeach; ?>
-
+                    <?php foreach ($hasil as $product): ?>
+                    <tr>
+                      <td>
+                        <?php echo substr($product['Penyakit'],23)  ?>
+                      </td>
+                      <td>
+                        <?php echo substr($product['Penanganan'],23) ?>
+                      </td>
+                    </tr>
+                    <?php endforeach; ?>
     </tbody>
   </table>
   </div>
@@ -59,7 +51,7 @@
     </div>
 </section>
 
-    <footer class="page-footer font-small footer" style="background-color: #2E2E2E">
+    <footer class="page-footer font-small" style="background-color: #2E2E2E">
         <div class="footer-copyright text-center py-3" style="color: white">© 2019 Cyber</div>
     </footer>  
     <script src="<?php echo base_url("assets/js/jquery.min.js")?>"></script>

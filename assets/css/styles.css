@@ -11,13 +11,14 @@
 }
 .helpr-section {
     height: 100%;
+    width: 100%;
     background: #655f58 url('https://cdn3.eyeem.com/thumb/ad5d6d963196c9e05a842160422e14ffb6371c64-1531188893086/w/850');
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
 }
 .helpr-text {
-    height: 450px;
+    height: 100%;
 }
 
 .webHomeTitle {
@@ -176,3 +177,33 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
   border: 2px solid #e9a1ff;
 }
 /* No CSS3 support: none */
+
+table {
+  padding: 10px 0 0px;
+    text-shadow: 0 4px 6px rgba(0,0,0,.20);
+    font-family: 'LatoWebBlack', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    margin-bottom: 200px;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}

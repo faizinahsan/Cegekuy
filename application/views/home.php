@@ -32,9 +32,20 @@
         </div>
 <form method="POST" action="<?php echo base_url("index.php/result")?>">
         <div class="container-cb">
-  <ul class="ks-cboxtags">
+<!-- <label class="container"><input type="checkbox" checked="checked">One
+  <span class="checkmark"></span>
+</label>
+<label class="container">
+    <input type="checkbox">Two
+  <span class="checkmark"></span>
+</label>
+ -->
+
   <?php foreach ($hasil as $value):?>
-    <li><input type="checkbox" id="checkboxOne" name="gejala_name[]" value="<?php echo "ex:",substr($value['gejala'],23) ?>"><label for="checkboxOne"><?php echo substr($value['gejala'],23) ?></label></li>
+  <label class="container"><input type="checkbox" name="gejala_name[]" value="<?php echo "ex:",substr($value['gejala'],23) ?>"><?php echo substr($value['gejala'],23) ?>
+  <span class="checkmark"></span>
+</label>
+    <!-- <li><input type="checkbox" id="checkboxOne" name="gejala_name[]" value="<?php echo "ex:",substr($value['gejala'],23) ?>"><label for="checkboxOne"><?php echo substr($value['gejala'],23) ?></label></li> -->
   <?php endforeach?>
     <!-- <li><input type="checkbox" id="checkboxOne" value="Demam"><label for="checkboxOne">Demam</label></li> -->
     <!-- <li><input type="checkbox" id="checkboxTwo" value="Pegal-pegal" checked=""><label for="checkboxTwo">Pegal-pegal</label></li>
